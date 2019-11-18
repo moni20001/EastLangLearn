@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <th:block th:replace="fragments/head"></th:block>
+</head>
+<body>
+<header>
+    <th:block th:replace="fragments/navbar"></th:block>
+</header>
+<main>
+    <div class="bannerHome">
+        <div class="wrap row">
+            <div class="col-lg-12 col-md-12 col-12 homebanner pull-left">
+                <h1 class="homeBannerTitle" th:text="#{homeBannerTitle}"></h1>
+                <h3 class="homeBannerText" th:text="#{homeBannerText}"></h3>
+                <br>
+                <th:block th:if="${authorization=='ROLE_ANONYMOUS'}">
+                    <div class="row justify-content-center ">
+                        <div class="col-sm-6 col-md-4 col-lg-2 text-center buttonsHome">
+                            <a class="btn btn-success homeButton" href="/login" th:text="#{login}"></a>
+                        </div>
+                        <br>
+                        <div class="col-sm-6 col-md-4 col-lg-2 text-center buttonsHome">
+                            <a class="btn btn-danger homeButton" href="/register" th:text="#{register}"></a>
+                        </div>
+                    </div>
+                </th:block>
+                <br>
+                <div class="row">
+                    <div class="textHomeBanner col text-center" th:text="#{quizes}+ ${quizesSize}"></div>
+                    <div class="textHomeBanner col text-center" th:text="#{lessons}+ ${lessonsSize}"></div>
+                    <div class="textHomeBanner col text-center" th:text="#{words} + ${wordsSize}"></div>
+                    <div class="textHomeBanner col text-center" th:text="#{users}+ ${usersSize}"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<th:block th:replace="fragments/footer"></th:block>
+</body>
+</html>

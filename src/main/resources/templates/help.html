@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+      xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <th:block th:replace="fragments/head"></th:block>
+</head>
+<body>
+<header>
+    <th:block th:replace="fragments/navbar"></th:block>
+</header>
+<main>
+    <div class="container">
+        <h1 th:text="#{help}"></h1>
+        <ol>
+            <li><a href="#whyChinese" th:text="#{whyChinese}"></a></li>
+            <li><a href="#hskExplained" th:text="#{hsk}"></a></li>
+            <li><a href="#howToAddChinese" th:text="#{helpAddChinese}"></a></li>
+            <li><a href="#contacts" th:text="#{contacts}"></a></li>
+        </ol>
+    </div>
+    <br>
+    <div class="container">
+        <div id="whyChinese">
+            <h2 th:text="#{whyChinese}"></h2>
+            <h5 th:text="#{whyChineseAns1}"></h5>
+            <h5 th:text="#{whyChineseAns2}"></h5>
+            <h5 th:text="#{whyChineseAns3}"></h5>
+        </div>
+        <br>
+        <div id="hskExplained">
+            <h2 th:text="#{whatIsHSK}"></h2>
+            <h5 th:text="#{hsk1Explained}"></h5>
+            <h5 th:text="#{hsk2Explained}"></h5>
+            <h5 th:text="#{hsk3Explained}"></h5>
+            <h5 th:text="#{hsk4Explained}"></h5>
+            <h5 th:text="#{hsk5Explained}"></h5>
+            <h5 th:text="#{hsk6Explained}"></h5>
+        </div>
+        <br>
+        <div id="howToAddChinese">
+            <h2 th:text="#{helpAddChinese}"></h2>
+            <div class="container">
+                <h3 th:text="#{onComputer}"></h3>
+                <h5 th:text="#{controlPanelMsg}"></h5>
+                <img class='img-fluid' src="https://drive.google.com/uc?id=177r7Sr4ax-5tp49G3BkwWLpBG6P55JqJ"/>
+                <h5 th:text="#{keyboardAndLanguagesTab}"></h5>
+                <img class='img-fluid' src="https://drive.google.com/uc?id=1pTLTkxO3siMl9CcQMD-3Lm_vrHr7M2Bb"/>
+                <h5 th:text="#{addLanguage}"></h5>
+                <img class='img-fluid' src="https://drive.google.com/uc?id=1ONEPvzw7l4jzluCA84QEcPruNNmJjht4"/>
+                <h5 th:text="#{languageAdded}"></h5>
+            </div>
+        </div>
+        <div id="contacts">
+            <h2 th:text="#{contacts}"></h2>
+            <h5 th:text="#{siteEmail}"></h5>
+            <h5 th:text="#{personalEmail}"></h5>
+        </div>
+        <br>
+    </div>
+</main>
+<th:block th:replace="fragments/footer"></th:block>
+</body>
+</html>

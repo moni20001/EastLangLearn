@@ -1,0 +1,84 @@
+<th:block th:fragment="navbar-user">
+    <div class="navbar-wrapper">
+        <nav class="navbar navbar-expand-lg navbar-dark  navbar-custom">
+            <a class="navbar-brand" href="/"><img src="/img/logoLight.png"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Nav"
+                    aria-controls="Nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="Nav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle  effectgrad" id="navbarDropdownMenuLink"
+                           data-toggle="dropdown"
+                           aria-haspopup="true"
+                           aria-expanded="false" th:text="#{navbarLessons}"></a>
+                        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                            <th:block th:each="l : ${languagesWords}">
+                                <a class="dropdown-item text-center difficulties" th:href="@{'/lang/'+${l.toString()}}"
+                                   th:text="${#strings.capitalize(l.toString())}"></a>
+                            </th:block>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle  effectgrad" id="navbarDropdownMenuLink2"
+                           data-toggle="dropdown"
+                           aria-haspopup="true"
+                           aria-expanded="false" th:text="#{navbarCertificates}"></a>
+                        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink2">
+                            <th:block th:each="d : ${difficulties}">
+                                <a class="dropdown-item text-center difficulties"
+                                   th:href="@{'/learnWords/'+${d.toString()}}"
+                                   th:text="${#strings.toUpperCase(d.toString())}"></a>
+                            </th:block>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle  effectgrad" id="navbarDropdownMenuLink1"
+                           data-toggle="dropdown"
+                           aria-haspopup="true"
+                           aria-expanded="false" th:text="#{dictionary}"></a>
+                        <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink1">
+                            <th:block th:each="d : ${difficulties}">
+                                <a class="dropdown-item text-center difficulties" th:href="@{'/diff/'+${d.toString()}}"
+                                   th:text="${#strings.toUpperCase(d.toString())}"></a>
+                            </th:block>
+                        </div>
+                    </li>
+
+                    <!-- Stories
+                    FOR DISPLAYING THE STORIES WHICH ARE DISABLED FOR THE MOMENT DUE TO NO WRITERS
+                    <li class="nav-item">
+                        <a th:text="#{stories_navbar}" class="nav-link effectgrad" href="/stories"></a>
+                    </li>
+                    --->
+
+                    <li class="nav-item">
+                        <a th:text="#{leaderboard}" href="/leaderboard" class="nav-link  effectgrad"></a>
+                    </li>
+                    <li class="nav-item">
+                        <a th:text="#{help}" href="/help" class="nav-link  effectgrad"></a>
+                    </li>
+                </ul>
+                <form class="form-inline" method="POST" th:action="@{/search/}" id="form">
+                    <div class="md-form my-0">
+                        <input class="form-control mr-sm-2" type="text" name="word" id="word" th:placeholder="#{search}"
+                               aria-label="Search">
+                    </div>
+                </form>
+                <ul class="navbar-nav mr-0">
+                    <li class="nav-item dropdown">
+                        <a th:text="#{myprofile}" class="nav-link dropdown-toggle effectgrad" data-toggle="dropdown"
+                           href="#"></a>
+                        <div class="dropdown-menu">
+                            <a th:text="#{learnedWords}" class="dropdown-item " href="/myProfile"></a>
+                            <a th:text="#{settings}" class="dropdown-item" href="/myProfile/settings"></a>
+                            <a class="dropdown-item" th:text="#{logout}" href="/logout"
+                               onclick="location.href='/logout'"></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</th:block>

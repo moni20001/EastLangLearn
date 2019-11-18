@@ -1,0 +1,53 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<th:block th:fragment="footer">
+    <footer class="page-footer font-small pt-4">
+        <div class="container-fluid text-center text-md-left">
+            <div class="row">
+                <div class="col-md-6 mt-md-0 mt-3">
+                    <h4>EastLangLearn</h4>
+                    <p th:text="#{footerText}"></p>
+                </div>
+                <hr class="clearfix w-100 d-md-none pb-3">
+                <div class="col-md-3 mb-md-0 mb-3">
+                    <ul>
+                        <li>
+                            <a class="footer-link effectgrad" href="/" th:text="#{homePage}"></a>
+                        </li>
+                        <li>
+                            <a class="footer-link effectgrad" href="/leaderboard" th:text="#{leaderboard}"></a>
+                        </li>
+                        <li>
+                            <a class="footer-link effectgrad" href="/help#contacts" th:text="#{contacts}"></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-md-0 mb-3">
+                    <ul>
+                        <li>
+                            <a class="footer-link effectgrad" href="/myProfile" th:text="#{myprofile}"></a>
+                        </li>
+                        <li>
+                            <span class="typingType" th:text="#{type_mode}"></span>
+                            <a id="myBtn" class="typeHelp">? </a>
+                            <br>
+                            <label class="switch">
+                                <input type="checkbox" id="typing-exercise">
+                                <span class="slider round"></span>
+                            </label>
+                            <div id="myModal" class="modal ">
+                                <div class="modal-content ">
+                                    <span class="close text-right ">&times;</span>
+                                    <p class="text-center" style="color:#000000" th:text="#{typingQuizHelp}"></p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright text-center py-3">© 2018/2019 Copyright:
+            <a class="footer-link effectgrad" style=" font-style: italic;" href="/"> EastLangLearn</a>
+        </div>
+    </footer>
+</th:block>
